@@ -14,9 +14,9 @@ class Program
         int magicNumber = numberGenorator.Next(1,100);
 
 
-        int guess = -1;
+        int kpuserGuess = -1;
 
-        while (guess != magicNumber)
+        while (kpuserGuess != magicNumber)
         {
             Console.WriteLine("What is your guess?");
             int kpyourguess = int.Parse(Console.ReadLine());
