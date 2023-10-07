@@ -21,7 +21,7 @@ class Program
         journal._kpPrompt.Add("What was the the hardest part of your day?"); 
 
         // Users choice of what they want to do
-        string kpchoice = "";
+        string kpChoice = "";
         
         while (true)
         {
@@ -31,28 +31,28 @@ class Program
             Console.WriteLine("3.Save");
             Console.WriteLine("4.Load");
             Console.WriteLine("5.Quit");
-            kpchoice = Console.ReadLine(); 
+            kpChoice = Console.ReadLine(); 
 
-            if (kpchoice == "1")
+            if (kpChoice == "1")
             {
             // calls the function Display in Journal
             journal.Display();
 
             }
             
-            else if (kpchoice == "2")
+            else if (kpChoice == "2")
             {
                 // calls the function Write_entry in Journal
                 journal.Write_entry();
             }
 
-            else if (kpchoice == "3")
+            else if (kpChoice == "3")
             {
                 //calls the function Save in Journal
                 journal.Save();
             }
 
-            else if (kpchoice == "4")
+            else if (kpChoice == "4")
             {
                 //calls the function Load in Journal
                 journal.Load();

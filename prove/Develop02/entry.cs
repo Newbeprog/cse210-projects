@@ -8,9 +8,9 @@ Kamas Peterson
 
 public class Entry
 {
-    public string _kpwords;
-    public string _kpprompt;
-    public string _kpdate;
+    public string _kpWords;
+    public string _kpPrompt;
+    public string _kpDate;
 
 
 }

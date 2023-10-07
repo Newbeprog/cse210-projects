@@ -10,9 +10,9 @@ Kamas Peterson
 
 public class Journal
 {
-    public List<Entry> _kpentries = new List<Entry>();
+    public List<Entry> _kpEntries = new List<Entry>();
     public List<string> _kpPrompt = new List<string>();
-    public string _kpfilename; 
+    public string _kpFilename; 
 
     public void DisplayMenu()
     {
@@ -22,10 +22,10 @@ public class Journal
 
     public void Display()
     {
-        foreach(Entry entry in _kpentries )
+        foreach(Entry entry in _kpEntries )
         {
             //prints out and lods to entry to then display to Program.cs
-            Console.WriteLine($"{entry._kpdate} \n {entry._kpprompt} \n {entry._kpwords}");
+            Console.WriteLine($"{entry._kpDate} \n {entry._kpPrompt} \n {entry._kpWords}");
 
         }
 
@@ -35,14 +35,14 @@ public class Journal
     {
         //Ask the user for a file perferable "myFile.txt"
         Console.WriteLine("What file would you like? ");
-        _kpfilename = Console.ReadLine();
+        _kpFilename = Console.ReadLine();
 
         //Saves the entries date, the prompt qiven, the word the user typed
-        using (StreamWriter outputFile = new StreamWriter(_kpfilename))
+        using (StreamWriter outputFile = new StreamWriter(_kpFilename))
         {
-            foreach (Entry entry in _kpentries)
+            foreach (Entry entry in _kpEntries)
             {
-                outputFile.WriteLine($"{entry._kpdate}, {entry._kpprompt}, {entry._kpwords}");
+                outputFile.WriteLine($"{entry._kpDate}, {entry._kpPrompt}, {entry._kpWords}");
             }
             
         }
@@ -59,17 +59,17 @@ public class Journal
         
         // Use random to interate through the prompts in the prompt list.
         Random rand = new Random(); 
-        string randprompt = this._kpPrompt[rand.Next(6)];
-        Console.WriteLine(randprompt);
+        string randPrompt = this._kpPrompt[rand.Next(6)];
+        Console.WriteLine(randPrompt);
         string kpuserentry = Console.ReadLine();
 
         //saves this into entry objects
-        entry._kpwords = kpuserentry;
-        entry._kpdate = dateText; 
-        entry._kpprompt = randprompt;
+        entry._kpWords = kpuserentry;
+        entry._kpDate = dateText; 
+        entry._kpPrompt = randPrompt;
         
         // adds this new entry to entry
-        _kpentries.Add(entry);
+        _kpEntries.Add(entry);
 
 
     }
@@ -77,16 +77,16 @@ public class Journal
     public void Load()
     {
         // when the user is ask "which file do you choose?" to save to and the user choose "myFile.txt" entries will be loaded.
-        string kpmyfilename = "myFile.txt"; 
-        string[] lines = System.IO.File.ReadAllLines(kpmyfilename);
+        string kpmyFilename = "myFile.txt"; 
+        string[] lines = System.IO.File.ReadAllLines(kpmyFilename);
 
         foreach (string line in lines)
         {
             string[] parts = line.Split(","); 
             Entry entry = new Entry
             {
-              _kpdate = parts[0],
-              _kpprompt = parts[1]
+              _kpDate = parts[0],
+              _kpPrompt = parts[1]
             };
         }
     }
