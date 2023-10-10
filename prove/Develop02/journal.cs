@@ -58,15 +58,15 @@ public class Journal
         string dateText = theCurrentTime.ToShortDateString(); 
         
         // Use random to interate through the prompts in the prompt list.
-        Random rand = new Random(); 
-        string randPrompt = this._kpPrompt[rand.Next(6)];
-        Console.WriteLine(randPrompt);
+        Random kprand = new Random(); 
+        string kprandPrompt = this._kpPrompt[kprand.Next(6)];
+        Console.WriteLine(kprandPrompt);
         string kpuserentry = Console.ReadLine();
 
         //saves this into entry objects
         entry._kpWords = kpuserentry;
         entry._kpDate = dateText; 
-        entry._kpPrompt = randPrompt;
+        entry._kpPrompt = kprandPrompt;
         
         // adds this new entry to entry
         _kpEntries.Add(entry);
